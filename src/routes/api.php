@@ -14,6 +14,7 @@ Route::get('/user', function (Request $request) {
 // Admin
 
 Route::post('/admin/category/store', [AdminCategoryController::class, 'store']);
+Route::post('/admin/category/categories', [AdminCategoryController::class, 'categories']);
 
 // Auth
 

@@ -11,6 +11,18 @@ use App\Models\Category\Categories;
 class AdminCategoryController extends Controller
 {
 
+     /**
+     * Display a listing of the resource.
+     */
+    public function categories()
+    {
+        $categories = Categories::Active()->get();
+
+        return response()->json(CreateResponseMessage::Success("categories_returned", json_decode((json_encode([
+            "categories" => $categories,
+        ])))), 200);
+    }
+
     /**
      * Store a newly created resource in storage.
      */
