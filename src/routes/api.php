@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Admin\AdminCategoryController;
 
 Route::get('/user', function (Request $request) {
     
@@ -10,6 +11,11 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 
+// Admin
+
+Route::post('/admin/category/store', [AdminCategoryController::class, 'store']);
+
+// Auth
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
